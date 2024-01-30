@@ -1,0 +1,50 @@
+let mapleader = " "
+
+set nu
+set rnu
+set hls
+set incsearch
+set clipboard+=unnamed
+set matchit
+
+# Recentering on search
+nnoremap n nzz
+vnoremap n nzz
+nnoremap N Nzz
+vnoremap N Nzz
+# Recentering on paragraph skip
+nnoremap } }zz
+vnoremap } }zz
+nnoremap { {zz
+vnoremap { {zz
+# Recentering on half-page up/down
+nnoremap <C-u> <C-u>zz
+vnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+vnoremap <C-d> <C-d>zz
+nnoremap <ESC> :nohlsearch<CR>
+
+if has('ide')
+	map <leader>sbh <Action>(SplitHorizontally)
+	map <leader>sbv <Action>(SplitVertically)
+	map <leader>sr <Action>(MoveTabRight)
+	map <leader>sd <Action>(MoveTabDown)
+	map <leader>us <Action>(Unsplit)
+	map <leader>cl <Action>(CloseAllToTheLeft)
+	map <leader>cr <Action>(CloseAllToTheRight)
+	map <leader>ct <Action>(CloseContent)
+	map <leader>ca <Action>(CloseAllEditors)
+	map <leader>co <Action>(CloseAllToTheLeft) <Action>(CloseAllToTheRight)
+	map <leader>t <Action>(ActivateTerminalToolWindow)
+	map <leader>h <Action>(ShowHoverInfo)
+	map <leader>e <Action>(GotoNextError)
+	map <leader>E <Action>(GotoPreviousError)
+	map <leader>bp <Action>(ToggleLineBreakpoint)
+	map <leader>rdb <Action>(Debug)
+	map <leader>run <Action>(Run)
+	map <leader>source :source ~/.ideavimrc<CR>
+endif
+
+# Plugins
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
